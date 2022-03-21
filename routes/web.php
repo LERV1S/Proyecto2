@@ -16,3 +16,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+Route::get('bienvenida', function() {
+    return view('bienvenida');
+});
+
+Route::get('contacto', function() {
+    return view('contacto');
+});
+
+Route::get('miscuadros', function() {
+    return view('miscuadros');
+});
